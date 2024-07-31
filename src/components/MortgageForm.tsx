@@ -130,6 +130,10 @@ const MortgageForm = () => {
         error: false,
       },
     });
+    setMortgageData({
+      mortgage: undefined,
+      total: undefined,
+    });
   };
 
   const calculatePayment = (e: MouseEvent<HTMLButtonElement>) => {
@@ -378,10 +382,10 @@ const MortgageForm = () => {
           </button>
         </div>
       </section>
-      <section className="bg-lite-900 bg-opacity-95 text-white md:rounded-r-2xl md:rounded-bl-[5rem] p-5 py-10 md:text-center lg:max-w-[25rem] lg:w-[36vw] md:w-[36vw]">
+      <section className="bg-lite-900 bg-opacity-95 text-white md:rounded-r-2xl md:rounded-bl-[5rem] p-5 py-10 md:text-center lg:max-w-[25rem] lg:w-[36vw] md:w-[36vw] flex justify-center items-center">
         <div
           ref={mortgageEl}
-          className={mortgageData.mortgage ? "block" : "hidden"}
+          className={`${mortgageData.mortgage ? "block" : "hidden"} text-left`}
         >
           <h2 className="text-2xl">Your results</h2>
           <br />
@@ -407,10 +411,11 @@ const MortgageForm = () => {
         </div>
         <div className={mortgageData.mortgage ? "hidden" : "block"}>
           <Image
-            src={"/images/Illustration-empty.svg"}
+            src={"/images/illustration-empty.svg"}
             width={192}
             height={192}
             alt="Calculator Image"
+            unoptimized={true}
             className="mx-auto"
           />
           <h2 className="text-2xl mb-3">Results shown here</h2>
