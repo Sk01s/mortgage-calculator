@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,17 +18,78 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    )d
+    rgb(var(--background-start-rgb)); */
+  background-color: rgb(207, 241, 241);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.remove-arrow {
+  -moz-appearance: textfield;
+}
+.custom-radio {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #fff;
+  border: 2px solid #d1d5db;
+  border-radius: 70%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-border-radius: 70%;
+  -moz-border-radius: 70%;
+  -ms-border-radius: 70%;
+  -o-border-radius: 70%;
+}
+.custom-radio:focus-visible {
+  outline: solid hsl(61, 70%, 52%) 3px;
+}
+
+.custom-radio:checked {
+  border-color: hsl(61, 70%, 52%);
+  background-color: hsl(61, 70%, 52%);
+}
+
+.wrapper:has(.custom-radio:checked) {
+  background-color: hsla(61, 70%, 52%, 0.1);
+  border-color: hsl(61, 70%, 52%);
+}
+.custom-radio:checked::after {
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: hsl(61, 70%, 52%);
+  border-radius: 100%;
+  position: absolute;
+  outline: 3px white solid;
+  outline-offset: -2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
 }
