@@ -322,7 +322,7 @@ const MortgageForm = () => {
         </div>
         <br />
         <div>
-          <h3>Mortgage Type</h3>
+          <h2>Mortgage Type</h2>
           <div className="rounded-md border-[1px] flex items-center my-2 hover:border-prime bg-white wrapper transition-all">
             <label htmlFor="repayment" className="w-3"></label>
             <input
